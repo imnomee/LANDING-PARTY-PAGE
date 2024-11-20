@@ -7,13 +7,15 @@
 \*-----------------------------------*/
 :root {
     /* Colors */
-    --medium-turquoise: hsl(179, 41%, 63%);
-    --viridian-green: hsl(179, 41%, 43%);
+    --medium-turquoise: hsl(140, 51%, 48%);
+    --viridian-green: hsl(140, 60%, 30%);
     --smoky-black: hsl(0, 0%, 8%);
-    --light-gray: hsl(0, 0%, 80%);
-    --heat-wave: hsl(26, 99%, 54%);
+    --light-gray: hsl(0, 0%, 85%);
+    --heat-wave: hsl(25, 90%, 60%);
     --gunmetal: hsl(212, 16%, 16%);
     --white: hsl(0, 0%, 100%);
+    /**/
+    --turquoise-accent: hsl(179, 41%, 63%);
 
     /* Typography */
     --ff-shadows_into_light: 'Shadows Into Light', cursive;
@@ -148,6 +150,15 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+.logo {
+    width: 50px;
+    height: 50px;
+}
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
 .nav-toggle-btn {
     font-size: 3.2rem;
 }
@@ -159,6 +170,7 @@ body {
 .nav-toggle-btn.active .close {
     display: block;
 }
+
 .navbar {
     position: fixed;
     top: 56px;
@@ -183,7 +195,7 @@ body {
 }
 .navbar-link:is(:hover, :focus-visible) {
     color: var(--white);
-    background: var(--heat-wave);
+    background: var(--medium-turquoise);
     padding-left: 30px;
     font-weight: var(--fw-500);
 }
@@ -206,6 +218,7 @@ body {
     font-size: var(--fs-2);
     font-weight: var(--fw-700);
     text-transform: uppercase;
+    margin-block: 20px;
 }
 .hero-title {
     color: var(--heat-wave);
@@ -213,13 +226,18 @@ body {
     font-size: var(--fs-1);
     font-weight: var(--fw-400);
     line-height: 1;
-    margin-block: 5px 20px;
+    margin-block: 20px;
+}
+.hero-title span {
+    display: inline-block;
+    font-size: var(--fs-2);
 }
 .hero-text {
     font-size: var(--fs-2);
-    font-weight: var(--fw-500);
+    font-weight: var(--fw-400);
     margin-block-end: 30px;
-    line-height: 1.4;
+    line-height: 1.5;
+    z-index: 2;
 }
 .btn {
     background: var(--medium-turquoise);
@@ -241,7 +259,7 @@ body {
 
 @media (min-width: 575px) {
     .container {
-        max-width: 540px;
+        max-width: 560px;
         width: 100%;
         margin-inline: auto;
     }
@@ -253,6 +271,13 @@ body {
     .container {
         max-width: 720px;
     }
+    .hero-title {
+        margin-block-end: 20px;
+    }
+    .hero-title span {
+        font-size: var(--fs-1);
+        margin-left: 20px;
+    }
 }
 @media (min-width: 992px) {
     .container {
@@ -262,8 +287,9 @@ body {
     .hero-title {
         max-width: 75%;
     }
+
     .hero-text {
-        max-width: 660px;
+        max-width: 770px;
     }
 }
 
